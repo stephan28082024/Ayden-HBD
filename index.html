@@ -361,9 +361,6 @@
     .count b{font-size:1.8rem}
     .arch{width:58vw}
   }
-display: block;
-width: fit-content;
-margin: 0 auto;
 </style>
 </head>
 <body>
@@ -573,11 +570,19 @@ margin: 0 auto;
 
 <script>
 // ===== ouverture de l'invitation =====
-function openInvitation(){
-  document.getElementById('cover').classList.add('open');
-  document.body.style.overflow='';
+function openInvitation() {
+  const cover = document.getElementById('cover');
+
+  if (!cover) {
+    alert("Erreur : l'écran d'accueil est introuvable.");
+    return;
+  }
+
+  cover.classList.add('open');
+  document.body.style.overflow = 'auto';
 }
-document.body.style.overflow='hidden';
+
+document.body.style.overflow = 'hidden';
 
 // ===== musique =====
 const audio = document.getElementById('music-audio');
