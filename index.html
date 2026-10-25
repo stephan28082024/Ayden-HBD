@@ -586,6 +586,7 @@ document.body.style.overflow = 'hidden';
 
 // ===== musique =====
 const audio = document.getElementById('music-audio');
+  audio.volume = 1.0;
 const musicBtn = document.getElementById('music-btn');
 audio.addEventListener('canplaythrough', ()=>{ musicBtn.style.display='block'; });
 audio.addEventListener('error', ()=>{ musicBtn.style.display='none'; });
