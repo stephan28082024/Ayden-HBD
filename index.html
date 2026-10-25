@@ -300,10 +300,31 @@
   /* dress */
   .dress{background:#fff;border:1px solid var(--beige);border-radius:22px;max-width:520px;margin:0 auto;padding:32px 24px;text-align:center;box-shadow:0 10px 28px rgba(215,196,183,.2)}
   .dress p{color:var(--ink-soft);line-height:1.6;margin-bottom:18px}
-  .swatches{display:flex;gap:16px;justify-content:center}
-  .swatch{width:60px;height:60px;border-radius:18px;box-shadow:inset 0 -8px 14px rgba(0,0,0,.1)}
-  .sw-blue{background:#AEC6CF}
-  .sw-beige{background:#E8DFD8}
+  .swatches{display:flex;gap:16px;justify-content:center;flex-wrap: wrap;}
+  .swatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #dedede;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+  .sw-blue {
+  background: #A9D3F0;
+}
+
+.sw-white {
+  background: #FFFFFF;
+}
+
+.sw-beige {
+  background: #D7BE9B;
+}
+
+.swatch-label {
+  font-size: .8rem;
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
 
   .about{background:linear-gradient(160deg,#F7F1EA,#EFF5F7)}
   .about .inner{text-align:center;max-width:560px;margin:0 auto}
@@ -449,13 +470,40 @@ margin: 0 auto;
 </section>
 
 <section>
+  
+<section id="dresscode">
   <div class="wrap">
     <h2 data-i18n="dress_h">🤍 DRESS CODE 🤍</h2>
+
     <div class="dress">
-      <p data-i18n="dress_p">Bleu ciel poudré ou beige sable</p>
-      <div class="swatches"><div class="swatch sw-blue"></div><div class="swatch sw-beige"></div></div>
+      <p data-i18n="dress_p">
+        Bleu ciel, blanc et beige
+      </p>
+
+      <div class="swatches">
+        <div>
+          <div class="swatch sw-blue"></div>
+          <div class="swatch-label">Bleu ciel</div>
+        </div>
+
+        <div>
+          <div class="swatch sw-white"></div>
+          <div class="swatch-label">Blanc</div>
+        </div>
+
+        <div>
+          <div class="swatch sw-beige"></div>
+          <div class="swatch-label">Beige</div>
+        </div>
+      </div>
+
+      <p data-i18n="dress_note" style="margin-top:20px">
+        Choisissez une ou plusieurs de ces couleurs.
+        Pas besoin de porter les trois ! 💙
+      </p>
     </div>
   </div>
+
 </section>
 
 <section class="about">
@@ -586,7 +634,7 @@ const I18N = {
     maps:"Ouvrir dans Google Maps",
     plan_h:"Le programme",
     t1d:"Arrivée des invités & bienvenue",t4d:"Repas & fête", t3d:"Jeux & animation", t2d:"Fête du gâteau 🎂",  
-    dress_h:"Dress code", dress_p:"Bleu ciel poudré, beige sable et Blanc",
+    dress_h:"Dress code", dress_p:"Bleu ciel, blanc et beige",
     about_h:"Notre petit héros",
     about:"Depuis que tu es dans nos vies, Ayden, tu remplis nos cœurs d’un amour infini. ❤️ Chaque sourire, chaque câlin et chaque petit progrès sont un bonheur immense. Tu es notre plus beau cadeau, notre petit trésor. Nous t’aimons plus que les mots ne pourront jamais le dire. 💙",
     gal_h:"Nos souvenirs", ph1:"Photo 1", ph2:"Photo 2", ph3:"Photo 3", ph4:"Photo 4", ph5:"Photo 5", ph6:"Photo 6", ph7:"Photo 7", ph8:"Photo 8",
@@ -608,7 +656,7 @@ const I18N = {
     maps:"Open in Google Maps",
     plan_h:"The plan",
     t1d:"Guests arrival & welcome", t2d:"Cake smash 🎂", t3d:"Games & fun", t4d:"Food & party",
-    dress_h:"Dress code", dress_p:"Powdery sky blue or sand beige",
+    dress_h:"Dress code", dress_p:"Sky blue, white and beige",
     about_h:"Our little hero",
     about:"Since you came into our lives, Ayden, you have filled our hearts with endless love. ❤️ Every smile, every cuddle, and every little milestone brings us so much joy. You are our greatest gift, our precious little treasure. We love you more than words could ever say. 💙!",
     gal_h:"Our memories", ph1:"Photo 1", ph2:"Photo 2", ph3:"Photo 3", ph4:"Photo 4", ph5:"Photo 5", ph6:"Photo 6", ph7:"Photo 7",  ph8:"Photo 8",
@@ -630,7 +678,7 @@ const I18N = {
     maps:"In Google Maps öffnen",
     plan_h:"Der Ablauf",
     t1d:"Ankommen & Begrüßung", t2d:"Kuchenfest 🎂", t3d:"Spiele & Action", t4d:"Essen & Party",
-    dress_h:"Dresscode", dress_p:"Pudriges Himmelblau oder Sandbeige",
+    dress_h:"Dresscode", dress_p:"Himmelblau, Weiß und Beige",
     about_h:"Unser kleiner Held",
     about:"Seit du in unser Leben gekommen bist, Ayden, erfüllst du unsere Herzen mit unendlicher Liebe. ❤️ Jedes Lächeln, jede Umarmung und jeder kleine Fortschritt schenkt uns unendlich viel Freude. Du bist unser größtes Geschenk, unser kleiner Schatz. Wir lieben dich mehr, als Worte jemals ausdrücken können. 💙!",
     gal_h:"Unsere Erinnerungen", ph1:"Foto 1", ph2:"Foto 2", ph3:"Foto 3", ph4:"Foto 4", ph5:"Foto 5", ph6:"Foto 6", ph7:"Foto 7", ph8:"Foto 8",
