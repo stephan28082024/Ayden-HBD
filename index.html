@@ -348,19 +348,94 @@
   footer{text-align:center;padding:44px 20px 60px;color:#a89c90;font-size:.9rem;position:relative;z-index:2}
   footer .heart{color:var(--gold)}
 
-  @media (max-width:520px){
-    body{overflow:auto;background:var(--cream)}
-    .phone-shell{width:100%;height:auto;min-height:100vh;margin:0;padding:0;border:0;border-radius:0;background:var(--cream);box-shadow:none}
-    .phone-shell::before,.phone-shell::after,.phone-notch{display:none}
-    .phone-screen{height:auto;min-height:100vh;overflow:visible;border-radius:0}
-    .cover{position:fixed}
-    .lang{position:fixed;top:12px;right:12px}
-    .music{position:fixed}
-    .confetti{position:fixed}
-    .count div{min-width:72px;padding:14px 8px}
-    .count b{font-size:1.8rem}
-    .arch{width:58vw}
+ 
+@media (max-width:520px) {
+  body {
+    overflow: auto;
+    background: radial-gradient(
+      ellipse at top,
+      #f8f3ee 0%,
+      #d9d3cf 70%,
+      #c8c2bd 100%
+    );
   }
+
+  .phone-shell {
+    position: relative;
+    width: calc(100% - 24px);
+    height: calc(100dvh - 24px);
+    min-height: 600px;
+    margin: 12px auto;
+    padding: 8px;
+    border: none;
+    border-radius: 42px;
+    background: linear-gradient(
+      115deg,
+      #333 0%,
+      #090909 18%,
+      #666 25%,
+      #111 33%,
+      #080808 75%,
+      #777 88%,
+      #171717 100%
+    );
+    box-shadow:
+      0 18px 40px rgba(0,0,0,.3),
+      inset 0 0 0 2px #8e8e8e,
+      inset 0 0 0 5px #222;
+  }
+
+  .phone-screen {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 34px;
+  }
+
+  .phone-notch {
+    display: block;
+  }
+
+  .phone-shell::before,
+  .phone-shell::after {
+    display: block;
+  }
+
+  .cover {
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+  }
+
+  .lang {
+    position: absolute;
+    top: 38px;
+    right: 16px;
+  }
+
+  .music {
+    position: absolute;
+  }
+
+  .confetti {
+    position: absolute;
+  }
+
+  .count div {
+    min-width: 65px;
+    padding: 12px 6px;
+  }
+
+  .count b {
+    font-size: 1.6rem;
+  }
+
+  .arch {
+    width: min(190px, 52vw);
+  }
+}
+
 </style>
 </head>
 <body>
