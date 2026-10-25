@@ -481,21 +481,21 @@ margin: 0 auto;
       </p>
 
       <div class="swatches">
-        <div>
-          <div class="swatch sw-blue"></div>
-          <div class="swatch-label">Bleu ciel</div>
-        </div>
+  <div>
+    <div class="swatch sw-blue"></div>
+    <div class="swatch-label" data-i18n="color_blue">Bleu ciel</div>
+  </div>
 
-        <div>
-          <div class="swatch sw-white"></div>
-          <div class="swatch-label">Blanc</div>
-        </div>
+  <div>
+    <div class="swatch sw-white"></div>
+    <div class="swatch-label" data-i18n="color_white">Blanc</div>
+  </div>
 
-        <div>
-          <div class="swatch sw-beige"></div>
-          <div class="swatch-label">Beige</div>
-        </div>
-      </div>
+  <div>
+    <div class="swatch sw-beige"></div>
+    <div class="swatch-label" data-i18n="color_beige">Beige</div>
+  </div>
+</div>
 
       <p data-i18n="dress_note" style="margin-top:20px">
         Le dress code est simplement une suggestion, aucune obligation. Venez comme vous êtes ! ❤️
@@ -661,7 +661,10 @@ const I18N = {
     gal_h:"Our memories", ph1:"Photo 1", ph2:"Photo 2", ph3:"Photo 3", ph4:"Photo 4", ph5:"Photo 5", ph6:"Photo 6", ph7:"Photo 7",  ph8:"Photo 8",
     drop_h:"Your photos of the day", drop_p:"Caught some great moments? Send us your photos:",
     rsvp_h:"RSVP", rsvp_m:"We can't wait to celebrate with you! Let us know if you can join the fun.",
-    foot:"With all our love — The Dävy Family"
+    foot:"With all our love — De Kamto Family's"
+    color_blue: "Sky blue",
+color_white: "White",
+color_beige: "Beige",
   },
   de:{
     kicker:"Geburtstagsfeier", at:"IS TURNING One", tagline:"Feiert mit uns!",
@@ -683,8 +686,12 @@ const I18N = {
     gal_h:"Unsere Erinnerungen", ph1:"Foto 1", ph2:"Foto 2", ph3:"Foto 3", ph4:"Foto 4", ph5:"Foto 5", ph6:"Foto 6", ph7:"Foto 7", ph8:"Foto 8",
     drop_h:"Eure Fotos vom Tag", drop_p:"Habt ihr schöne Momente festgehalten? Schickt uns eure Fotos:",
     rsvp_h:"RSVP", rsvp_m:"Wir können es kaum erwarten, mit euch zu feiern! Lasst uns wissen, ob ihr dabei seid.",
-    foot:"Mit all unserer Liebe — Familie Dävy"
+    foot:"Mit all unserer Liebe — Familie De Kamto"
+    color_blue: "Himmelblau",
+color_white: "Weiß",
+color_beige: "Beige",
   }
+
 };
 function setLang(l){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
