@@ -85,18 +85,175 @@
   @keyframes drift{0%{transform:translateY(-5vh) rotate(0)}100%{transform:translateY(105vh) rotate(360deg)}}
 
   /* ===== cover page ===== */
-  .cover{position:absolute;inset:0;z-index:100;background:var(--cream);display:flex;flex-direction:column;align-items:center;text-align:center;padding:6vh 20px 0;transition:opacity .9s ease,visibility .9s;overflow:hidden}
-  .cover.open{opacity:0;visibility:hidden}
-  .kicker{letter-spacing:.45em;text-transform:uppercase;font-size:.75rem;color:var(--ink-soft);margin-bottom:18px;font-weight:600}
-  .cover h1{font-size:clamp(3.4rem,12vw,6.5rem);font-weight:700;line-height:1;color:var(--ink)}
-  .cover h1 em{font-style:italic;color:var(--blue-deep)}
-  .cover .tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.05rem,3vw,1.4rem);color:var(--ink-soft);margin-top:14px}
-  .cover .when{margin-top:26px;font-size:.95rem;font-weight:500;letter-spacing:.05em;color:var(--ink)}
-  .cover .where{font-size:.9rem;color:var(--ink-soft);margin-top:4px}
-  .cta{margin-top:30px;background:var(--blue);color:#fff;border:none;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.85rem;padding:17px 44px;border-radius:99px;cursor:pointer;box-shadow:0 10px 26px rgba(155,184,205,.5);transition:transform .25s,background .25s}
-  .cta:hover{transform:translateY(-3px);background:var(--blue-deep)}
-  .arch{margin-top:auto;margin-bottom:0;width:min(300px,60vw);aspect-ratio:3/4;background:linear-gradient(160deg,var(--beige),var(--taupe));border-radius:999px 999px 22px 22px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:3.4rem;box-shadow:0 -12px 40px rgba(215,196,183,.35);overflow:hidden;position:relative}
-  .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+ 
+/* ===== Page d'accueil : invitation Ayden ===== */
+
+.cover {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: #FDFBF7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 42px 22px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: opacity .8s ease, visibility .8s ease;
+}
+
+.cover.open {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Petit titre en haut */
+.kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: #8A7768;
+  margin-bottom: 12px;
+}
+
+/* Nom et âge */
+.cover h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3.2rem, 10vw, 5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: #4A4A4A;
+  margin: 0;
+}
+
+.cover h1 em {
+  color: #9BB8CD;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+/* Phrase d'invitation */
+.cover .tagline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+  line-height: 1.5;
+  color: #8A7768;
+  margin-top: 12px;
+}
+
+/* Encadré date, heure et adresse */
+.event-info {
+  width: 100%;
+  max-width: 330px;
+  margin-top: 24px;
+  padding: 16px 14px;
+  background: #FFFFFF;
+  border: 1px solid #E8DFD8;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(100, 80, 60, .08);
+}
+
+.cover .when {
+  font-family: 'Inter', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #4A4A4A;
+}
+
+.cover .where {
+  font-family: 'Inter', sans-serif;
+  font-size: .83rem;
+  line-height: 1.6;
+  color: #81766D;
+  margin-top: 5px;
+}
+
+/* Bouton */
+.cta {
+  margin-top: 20px;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #AEC6CF;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(155, 184, 205, .3);
+  transition: transform .25s, background .25s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background: #9BB8CD;
+}
+
+/* Photo d'Ayden */
+.arch {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(220px, 58vw);
+  aspect-ratio: 4 / 5;
+  margin-top: 22px;
+  overflow: hidden;
+  border-radius: 48% 48% 20px 20px;
+  background: linear-gradient(160deg, #E8DFD8, #D7C4B7);
+  box-shadow: 0 10px 28px rgba(100, 80, 60, .12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.arch img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 520px) {
+  .cover {
+    padding: 36px 18px 24px;
+  }
+
+  .cover h1 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .cover .tagline {
+    font-size: 1.05rem;
+  }
+
+  .event-info {
+    margin-top: 18px;
+    padding: 13px 12px;
+  }
+
+  .cta {
+    margin-top: 16px;
+    padding: 14px 22px;
+    font-size: .73rem;
+  }
+
+  .arch {
+    width: min(190px, 52vw);
+    margin-top: 18px;
+  }
+}
+
 
   /* ===== nav ===== */
   .lang{position:absolute;top:38px;right:16px;z-index:60;display:flex;gap:4px;background:#fff;padding:5px;border-radius:99px;box-shadow:0 4px 14px rgba(74,74,74,.12)}
